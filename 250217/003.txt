@@ -1,0 +1,37 @@
+目标对象
+切面
+通知
+切点
+连接点JoinPoint；增强的方法
+织入
+
+
+
+
+2，通知（Advice）执行顺序
+
+(1) 业务代码正常执行
+
+around 前置代码
+
+before
+
+业务代码
+
+after returning
+
+after
+
+around 后置代码
+
+(2) 业务代码抛出异常
+
+around 前置代码
+
+before
+
+业务代码
+
+after throwing
+
+after

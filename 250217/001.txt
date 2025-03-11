@@ -1,0 +1,102 @@
+一，Bean注入到Spring容器中
+
+1，xml文件
+
+
+2，@Component
+
+@Repository,@Service,@Configuration
+
+
+3，@Bean
+
+
+4，@Import
+
+参数：普通类、ImportSelector实现类、ImportBeanDefinitionRegistrar实现类
+
+<bean class....> -> 加载bean ApplicationContext -> BeanDefinition -> 根据BeanDefinition创建实例化Bean
+
+-> 将实例化对象加载到容器中
+
+
+
+二，实例化Bean
+
+1，类中的构造函数
+
+
+2，﻿@Bean ﻿中指定构造函数
+
+
+3，FactoryBean的实现
+
+
+
+三，自动装配
+
+1，﻿@Bean ﻿的参数自动注入
+
+
+2，构造函数的参数自动注入
+
+
+3，@Autowired 
+
+多个的话，先根据名字
+
+不行就加注解﻿@Primary ﻿﻿@Qualifier ﻿
+
+
+4，一个都找不到@Autowired (required=false)
+
+
+
+四，Autowired
+
+1，构造函数
+
+有多个构造函数，且没有无参构造函数时，用@Autowired 指定一个构造函数
+
+但此处的(required=false)会失效
+
+
+2，参数
+
+针对构造函数中(required=false)的解决
+
+自动注入参数
+
+
+3，方法
+
+
+4，字段
+
+
+
+五，@Inject 和 @Resource 
+
+六，﻿@Value ﻿注入基本类型("${xuuu.name:hello}")
+
+spel复杂类型("#{   {  'english'  :  '98'  ,  'math'  :  '90'  }   }")
+
+("#{   'english, math'   }")
+
+七，Bean的生命周期
+
+1.配置@Component @Bean .. XushuService @Autowired ZhangsanService
+
+2. 加载Spring容器
+
+3. 实例化(XushuService xushu=new XushuService())
+
+4.解析依赖注入(解析@Autowired @Value)
+
+5.初始化(调用初始化方法,由程序有来配置)
+
+6. 最终放入Map<beanName,bean对象>
+
+7. spring容器.getBean("beanName") ---- >Map<beanName,bean对象>
+
+8，spring容器关闭，bean销毁，（调用销毁回调方法，由程序来配置）
