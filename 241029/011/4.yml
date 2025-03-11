@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: zypj
+server:
+  port: 8080
+people:
+ name: 张三
+ age: 22
+ sex: false
+ dog:
+  name: 阿黄
+  dogAge: 3
+ maps: {color: red,fruie: orange}
+ list:
+ - one
+ - two
+ - three
